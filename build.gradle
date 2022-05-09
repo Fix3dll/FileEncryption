@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+group 'me.fix3dll'
+version '1.0-SNAPSHOT'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src"]
+        }
+    }
+}
+
+jar {
+    manifest {
+        manifest {
+            attributes["Main-Class"] = "me.fix3dll.fileencryption.GUI"
+        }
+    }
+    from('src/') {
+        include 'images/*.png'
+    }
+}
